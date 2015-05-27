@@ -8,8 +8,7 @@ if($choix == 'arriveeentreprise')
    $tabOffre = getOffreArriveeEntreprise($idOffre);
 else 
    $tabOffre = getOffreDepartEntreprise($idOffre);
-    
-   
+
 echo json_encode($tabOffre);
 
 ?>

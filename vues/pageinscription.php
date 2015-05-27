@@ -1,6 +1,6 @@
 <div data-role="page" id="pageinscription">
 <?php
-include "vues/entetepage.html";
+include "vues/entetepageavecboutonretour.html";
 include "vues/logo.html";
 ?>
 <div data-role="content" id="divinscription"> 

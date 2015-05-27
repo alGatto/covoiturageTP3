@@ -4,15 +4,16 @@ require_once 'util/fonctions.php';
 if(!isset($_REQUEST['action'])||(!estConnecte() && $_REQUEST['action']!='inscription')  )
     $action = 'accueil';
 else 
-    $action = $_REQUEST['action'];
+  $action = $_REQUEST['action'];
   include "vues/entete.html";
 switch($action)
 {
     case 'accueil':
         include "vues/pageconnexion.php";
+        include "vues/pagemenuaccueil.php";
         break;
     case 'inscription':
-          include "vues/pageinscription.php";
+        include "vues/pageinscription.php";
         break;
     case 'gereroffresdepartentreprise':
         $_SESSION['choix'] = "departentreprise";
@@ -21,7 +22,7 @@ switch($action)
         include "vues/pageoffre.php";
         break;
     case 'gereroffresarriveeentreprise':
-         $_SESSION['choix'] = "arriveeentreprise";
+        $_SESSION['choix'] = "arriveeentreprise";
         $lesOffres = getLesOffresArriveeEntreprise();
         include "vues/pageoffresoffertes.php";
         include "vues/pageoffre.php";
@@ -31,8 +32,11 @@ switch($action)
          $lesOffresArriveeEntreprise = getMesOffresArriveeEntreprise($id);
          $lesOffresDepartEntreprise = getMesOffresDEpartEntreprise($id);
           include "vues/pagegerermesoffres.php";
+          //ajout de l'include ajouter offre
+          include "vues/pageajouteroffre.php";
           break;
      default :
+         include "vues/entete.html";
          include "vues/pageconnexion.php";
    }
 
